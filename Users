@@ -1,0 +1,31 @@
+import React, { useState } from "react"
+import { connect, useSelector } from "react-redux"
+import User from "./User"
+
+
+export default function Users() {
+    const usersList = useSelector((state) => state.users)
+    return (
+        <>
+
+        
+            {
+                
+                <div className="container">
+                    {
+                        usersList.map((user,index) => {
+                            return (
+                                <div key={index} className="row">
+                                    <User key={index} user={user}></User>
+                                </div>
+                            )
+                        })
+                    }
+                    <div className="row">
+                        <User user={usersList}></User>
+                    </div>
+                </div>
+            }
+        </>
+    )
+}
