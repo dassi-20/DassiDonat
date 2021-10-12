@@ -1,0 +1,29 @@
+import { createStore } from 'redux';
+import produce from 'immer';
+
+const initialUsersState = {
+    users: [
+        {
+            firstName: 'michal',
+            lastName: 'levi',
+            identity: '326598741',
+            birthDate:'02-05-2020',
+            homeland:'Israel'
+        }
+    ]
+}
+
+const userReducer = produce((state, action) => {
+    switch (action.type) {
+        case 'ADD_USER':
+            console.log("redux2",action.payload)
+            state.users.push(action.payload)
+            break;
+        default:
+            break;
+    }
+}, initialUsersState)
+
+const store = createStore(userReducer)
+window.store = store
+export default store
