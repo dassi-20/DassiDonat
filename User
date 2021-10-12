@@ -1,0 +1,29 @@
+import React, { Component } from "react"
+
+export default function User(props) {
+
+    const { user } = props
+
+    return (
+        <>
+            <div className="col-12">
+                {user ? user.firstName : null}
+            </div>
+            <div className="col-12">
+                {user ? user.lastName : null}
+            </div>
+            <div className="col-12">
+                {user ? user.identity : null}
+            </div>
+            <div className="col-12">
+                {user ? user.birthDate : null}
+            </div>
+            <div className="col-12">
+                {user ? user.homeland : null}
+            </div>
+        </>
+    )
+}
+Component.prototype = {
+
+}
